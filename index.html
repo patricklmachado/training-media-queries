@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Treino | Media Queries</title>
+
+    <style>
+
+    /* Configurações gerais */
+    @media all {
+        *{
+            margin: 0;
+            padding: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 1.4em;
+            box-sizing: border-box;
+            text-decoration: none;
+        }    
+
+        html, body{
+            height: 100vh;
+        }
+
+        body{
+            background:black url(imagens/back-phone.jpg) no-repeat center center;
+            background-size: cover;
+        }
+
+        body main{
+            margin-top: 20px;
+        }
+
+        img#print{display: none;}
+        img#phone{display: block;}
+        img#tablet{display: none;}
+        img#desktop{display: none;}
+        img#grande{display: none;}
+
+        h1{
+            color: white;
+            text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.876);
+            text-align: center;
+            padding: 10px;
+        }
+
+        main{
+            margin: 0 auto;
+            width: 400px;
+            background-color: rgba(255, 255, 255, 0.522);
+            padding: 10px;
+            border-radius: 20px;
+        }
+
+        img{
+            display: block;
+            margin: 0 auto;
+        }
+    }
+
+    /* 
+    Typical Device Breakpoints
+    -------------------------------------
+    Pequenas telas: até 600px
+    Celular: de 600px até 768px
+    Tablet: de 768px até 992px
+    Desktop: de 992px até 1200px
+    Grandes telas: acima de 1200px
+    */
+
+    /* Configuração Print */
+    @media print {
+        
+        body main{
+            display: block;
+            margin: auto;
+            border: 1px solid black;
+            padding: 10px;
+            border-radius: 20px;
+            width: 90vw;
+            background: url(imagens/back-print.jpg) no-repeat center center;
+        }
+
+        main h1{
+            text-align: center;
+        }
+        
+        img#print{display: block;}
+        img#phone{display: none;}
+        img#tablet{display: none;}
+        img#desktop{display: none;}
+        img#grande{display: none;}
+
+        main::after{
+            content: 'Criado por Patrick - github.io/patricklmachado';
+            font-size: 0.5em;
+        }
+    }
+
+    /* Configurações Celular */
+    @media screen and (min-width: 600px){
+        body{
+            background-image:url(imagens/back-phone.jpg);
+            background-attachment: fixed;
+        }
+
+        img#print{display: none;}
+        img#phone{display: block;}
+        img#tablet{display: none;}
+        img#desktop{display: none;}
+        img#grande{display: none;}
+    }
+
+    /* Configurações Tablet */
+    @media screen and (min-width: 768px){
+        body{
+            background-image:url(imagens/back-tablet.jpg);
+            background-attachment: fixed;
+        }
+        img#print{display: none;}
+        img#phone{display: none;}
+        img#tablet{display: block;}
+        img#desktop{display: none;}
+        img#grande{display: none;}
+    }
+
+    /* Configurações Desktop */
+    @media screen and (min-width: 992px){
+        body{
+            background-image:url(imagens/back-pc.jpg);
+            background-attachment: fixed;
+        }
+        img#print{display: none;}
+        img#phone{display: none;}
+        img#tablet{display: none;}
+        img#desktop{display: block;}
+        img#grande{display: none;}
+    }
+
+     /* Configurações Grande */
+     @media screen and (min-width: 1200px){
+        body{
+            background-image:url(imagens/back-tv.jpg);
+            background-attachment: fixed;
+        }
+
+        body main{
+            width: 620px;
+        }
+
+        img#print{display: none;}
+        img#phone{display: none;}
+        img#tablet{display: none;}
+        img#desktop{display: none;}
+        img#grande{display: block;}
+    }
+
+
+
+    </style>
+
+</head>
+<body>
+    <main>
+        <h1>Treinando Media Queries</h1>
+        <img id="print" src="imagens/icon-print.png" alt="acessando impressão">
+        <img id="phone" src="imagens/icon-phone.png" alt="Acessando pelo telefone">
+        <img id="tablet" src="imagens/icon-tablet.png" alt="Acessando pelo tablet">
+        <img id="desktop" src="imagens/icon-pc.png" alt="Acessando pelo desktop">
+        <img id="grande" src="imagens/icon-tv.png" alt="Acessando tela grande">
+    </main>
+</body>
+</html>
